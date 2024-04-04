@@ -6,6 +6,7 @@ use bevy::{
     prelude::*,
     render::primitives::Aabb,
 };
+use bevy_color::palettes::css::{GREEN, RED};
 
 use bevy_mod_raycast::prelude::*;
 
@@ -144,10 +145,10 @@ fn update_status(
     let bool_to_text = |is_enabled: bool, text: &mut Text| {
         if is_enabled {
             text.sections[1].value = "ON".to_string();
-            text.sections[1].style.color = Color::GREEN;
+            text.sections[1].style.color = Color::from(GREEN);
         } else {
             text.sections[1].value = "OFF".to_string();
-            text.sections[1].style.color = Color::RED;
+            text.sections[1].style.color = Color::from(RED);
         }
     };
 

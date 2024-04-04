@@ -1,4 +1,5 @@
 use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
+use bevy_color::palettes::css::PURPLE;
 use bevy_mod_raycast::prelude::*;
 
 fn main() {
@@ -23,7 +24,7 @@ fn setup(
         MaterialMesh2dBundle {
             mesh: meshes.add(Circle::default()).into(),
             transform: Transform::default().with_scale(Vec3::splat(128.)),
-            material: materials.add(ColorMaterial::from(Color::PURPLE)),
+            material: materials.add(ColorMaterial::from(Color::from(PURPLE))),
             ..default()
         },
         RaycastMesh::<()>::default(), // Make this mesh ray cast-able;
